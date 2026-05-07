@@ -1,0 +1,38 @@
+<%- include('partials/head_fixed', { pageTitle: 'My Posts', showSearch: false }) %>
+
+<div class="container">
+  <section class="panel glass">
+    <h2 class="panel-title">Your Posts</h2>
+    
+    <% if (posts && posts.length > 0) { %>
+      <div class="post-grid">
+        <% posts.forEach(post => { %>
+          <div class="post-card glass">
+            <% if (post.image_path) { %>
+              <a href="/post/<%= post.id %>" class="post-link">
+                <img src="/<%= post.image_path %>" alt="<%= post.title %>" class="post-image">
+              </a>
+            <% } %>
+            <div class="post-body">
+              <a href="/post/<%= post.id %>" class="post-link">
+                <h3 class="post-title"><%= post.title %></h3>
+              </a>
+              <% if (post.featured) { %>
+                <div class="post-meta muted">Featured</div>
+              <% } %>
+              <div class="post-meta muted"><%= post.createdAt %></div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } else { %>
+      <div class="empty-state">
+        <p>You haven't created any posts yet.</p>
+        <p>Start sharing your thoughts and create your first post.</p>
+        <a class="btn primary" href="/">Back to Home</a>
+      </div>
+    <% } %>
+  </section>
+</div>
+
+<%- include('partials/foot') %>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Search • CyberSphere</title>
+  <link rel="stylesheet" href="/static/css/app.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">CyberSphere</div>
+  <nav class="nav">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/categories">Categories</a>
+    <a class="nav-link" href="/admin">Admin</a>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="panel glass">
+    <h2 class="panel-title">Search</h2>
+
+    <form class="search-form" method="get" action="/search">
+      <input class="input" name="q" placeholder="Search posts, authors, categories..." th:value="${q}"/>
+      <button class="btn primary" type="submit">Search</button>
+    </form>
+
+    <div class="muted" style="margin-top:10px;" th:if="${q} != null">Results for: <span th:text="${q}"></span></div>
+
+    <div class="post-grid" style="margin-top:14px;">
+      <div class="post-card" th:each="p : ${posts}">
+        <img class="post-image" th:src="@{'/' + ${p.image_path}}" alt="" />
+        <div class="post-body">
+          <a class="post-title" th:href="@{'/post/'+${p.id}}" th:text="${p.title}">Title</a>
+          <div class="post-meta muted" th:text="${p.createdAt}">date</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
+

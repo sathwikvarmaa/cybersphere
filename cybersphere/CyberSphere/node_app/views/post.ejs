@@ -1,0 +1,46 @@
+<%- include('partials/head_fixed', { pageTitle: post.title, showSearch: false }) %>
+
+<article class="post-hero glass">
+  <div class="post-banner">
+    <img class="banner-img" src="/<%= post.imagePath %>" alt="" />
+  </div>
+
+  <div class="post-header">
+    <h1 class="post-h1"><%= post.title %></h1>
+    <div class="post-meta muted">
+      By <a class="link" href="/author/<%= post.authorId %>"><%= post.authorUsername %></a>
+      • <span><%= post.createdAt %></span>
+    </div>
+
+    <div class="post-actions">
+      <button class="btn" type="button" onclick="window.csx.like(<%= post.id %>)">👍 Like</button>
+      <button class="btn" type="button" onclick="window.csx.bookmark(<%= post.id %>)">🔖 Bookmark</button>
+      <a class="btn" href="/post/<%= post.id %>">Jump to comments</a>
+    </div>
+  </div>
+
+  <div class="post-content"><%- post.content %></div>
+</article>
+
+<section class="panel glass" style="margin-top:16px;">
+  <h2 class="panel-title">Comments</h2>
+
+  <form class="form" method="post" action="/post/comments">
+    <input type="hidden" name="postId" value="<%= post.id %>"/>
+    <label class="label">Add a comment</label>
+    <textarea class="input" name="body" rows="4"></textarea>
+    <button class="btn primary" type="submit">Publish comment</button>
+  </form>
+
+  <div class="comment-list">
+    <% comments.forEach(function(c){ %>
+      <div class="comment">
+        <div class="comment-author muted"><%= c.authorUsername %></div>
+        <div class="comment-body"><%- c.body %></div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/foot') %>
+

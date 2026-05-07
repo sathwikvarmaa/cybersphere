@@ -1,0 +1,41 @@
+<%- include('partials/head_fixed', { pageTitle: 'Home' }) %>
+
+<section class="hero">
+  <div class="hero-card">
+    <h1 class="hero-title">Premium blogging—built for VAPT practice</h1>
+    <p class="hero-sub">A realistic blog experience with intentional security flaws for local training.</p>
+  </div>
+</section>
+
+<section class="panel glass" style="padding:16px; margin-top:14px;">
+  <div class="panel-title">Featured posts</div>
+  <div class="post-grid" id="featuredGrid">
+    <% featured.forEach(function(p){ %>
+      <div class="post-card post-card-image" style="--card-image: url('/<%= p.image_path %>');">
+        <div class="post-media"></div>
+        <div class="post-body">
+          <a class="post-title" href="/post/<%= p.id %>" ><%= p.title %></a>
+          <div class="post-meta muted"><%= p.author_username %></div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<section class="panel glass" style="padding:16px; margin-top:14px;">
+  <div class="panel-title">Trending</div>
+  <div class="post-grid">
+    <% trending.forEach(function(p){ %>
+      <div class="post-card post-card-image" style="--card-image: url('/<%= p.image_path %>');">
+        <div class="post-media"></div>
+        <div class="post-body">
+          <a class="post-title" href="/post/<%= p.id %>" ><%= p.title %></a>
+          <div class="post-meta muted"><%= p.createdAt %></div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/foot') %>
+

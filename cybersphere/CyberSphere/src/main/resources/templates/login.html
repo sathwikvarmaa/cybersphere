@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login • CyberSphere</title>
+  <link rel="stylesheet" href="/static/css/app.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">CyberSphere</div>
+  <nav class="nav">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/register">Register</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="centered">
+    <section class="panel glass" style="max-width:520px;">
+      <h2 class="panel-title">Sign in</h2>
+
+      <form class="form" method="post" action="/login">
+        <label class="label">Username</label>
+        <input class="input" name="username" autocomplete="username" />
+
+        <label class="label">Password</label>
+        <input class="input" name="password" type="password" autocomplete="current-password" />
+
+        <button class="btn primary" type="submit">Login</button>
+
+        <div class="row" style="margin-top:12px;">
+          <a class="btn" href="/register">Create account</a>
+          <a class="btn" href="/reset">Reset password</a>
+        </div>
+      </form>
+    </section>
+  </div>
+</main>
+</body>
+</html>
+

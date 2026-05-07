@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberSphere</title>
+  <link rel="stylesheet" href="/static/css/app.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">CyberSphere</div>
+    <nav class="nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/search" class="nav-link">Search</a>
+      <a href="/categories" class="nav-link">Categories</a>
+      <a href="/admin" class="nav-link">Admin</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <h1 class="hero-title">Premium blogging—built for VAPT practice</h1>
+        <p class="hero-sub">A realistic blog experience with intentional security flaws for local training.</p>
+      </div>
+    </section>
+
+    <section class="panel glass" style="padding:16px; margin-top:14px;">
+      <div class="panel-title">Featured posts</div>
+      <div class="post-grid" id="featuredGrid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <div class="post-card" th:each="p : ${featured}">
+          <img class="post-image" th:src="@{'/' + ${p.image_path}}" alt="" />
+          <div class="post-body">
+            <a class="post-title" th:href="@{'/post/' + ${p.id}}" th:text="${p.title}">Title</a>
+            <div class="post-meta muted" th:text="${p.author_username}">author</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <section class="panel glass" style="padding:16px; margin-top:14px;">
+      <div class="panel-title">Trending</div>
+
+      <div class="post-grid" style="grid-template-columns: repeat(3, minmax(0, 1fr));">
+        <div class="post-card" th:each="p : ${trending}">
+          <img class="post-image" th:src="@{'/' + ${p.image_path}}" alt="" />
+          <div class="post-body">
+            <a class="post-title" th:href="@{'/post/' + ${p.id}}" th:text="${p.title}">Title</a>
+            <div class="post-meta muted" th:text="${p.createdAt}">date</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
+
+

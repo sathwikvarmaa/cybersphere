@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile • CyberSphere</title>
+  <link rel="stylesheet" href="/static/css/app.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">CyberSphere</div>
+  <nav class="nav">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/search">Search</a>
+    <a class="nav-link" href="/categories">Categories</a>
+    <a class="nav-link" href="/admin">Admin</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="two-col">
+    <section class="panel glass">
+      <h2 class="panel-title">Your profile</h2>
+
+      <div class="profile-card">
+        <div class="avatar">U</div>
+        <div>
+          <div class="profile-username" th:text="${username}">username</div>
+          <div class="profile-meta muted" th:text="${isAdmin} ? 'Admin' : 'Member'">Member</div>
+        </div>
+      </div>
+
+      <form class="form" method="post" action="/profile/update">
+        <label class="label">Bio</label>
+        <textarea class="input" name="bio" rows="4" th:text="${bio}"></textarea>
+
+        <div class="row">
+          <button class="btn primary" type="submit">Update profile</button>
+          <a class="btn" href="/logout">Logout</a>
+        </div>
+      </form>
+    </section>
+
+    <aside class="panel glass">
+      <h3 class="panel-title">Quick actions</h3>
+      <a class="btn" href="/bookmarks">Open bookmarks</a>
+      <a class="btn" href="/notifications">Notifications</a>
+      <a class="btn" href="/my/posts">My posts</a>
+    </aside>
+  </div>
+</main>
+</body>
+</html>
+

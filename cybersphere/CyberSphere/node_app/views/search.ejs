@@ -1,0 +1,29 @@
+<%- include('partials/head_fixed', { pageTitle: 'Search', pageClass: 'search-page', showSearch: false }) %>
+
+<section class="panel glass">
+  <h2 class="panel-title">Search</h2>
+
+  <form class="search-form" method="get" action="/search">
+    <input class="input" name="q" placeholder="Search posts, authors, categories..." value="<%= q || '' %>" />
+    <button class="btn primary" type="submit">Search</button>
+  </form>
+
+  <% if (q != null) { %>
+    <div class="muted" style="margin-top:10px;">Results for: <span><%= q %></span></div>
+  <% } %>
+
+  <div class="post-grid" style="margin-top:14px;">
+    <% posts.forEach(function(p){ %>
+      <div class="post-card post-card-image" style="--card-image: url('/<%= p.image_path %>');">
+        <div class="post-media"></div>
+        <div class="post-body">
+          <a class="post-title" href="/post/<%= p.id %>" ><%= p.title %></a>
+          <div class="post-meta muted"><%= p.createdAt %></div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/foot') %>
+     

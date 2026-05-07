@@ -1,0 +1,21 @@
+<%- include('partials/head_fixed', { pageTitle: category.name, showSearch: false }) %>
+
+<section class="panel glass">
+  <h2 class="panel-title">Explore: <%= category.name %></h2>
+  <div class="muted"><%= category.description %></div>
+
+  <div class="post-grid" style="margin-top:14px;">
+    <% posts.forEach(function(p){ %>
+      <div class="post-card post-card-image" style="--card-image: url('/<%= p.image_path %>');">
+        <div class="post-media"></div>
+        <div class="post-body">
+          <a class="post-title" href="/post/<%= p.id %>"><%= p.title %></a>
+          <div class="post-meta muted">By <%= p.author_username %> • <%= p.createdAt %></div>
+          <p style="margin-top:8px; color:var(--text-muted);"><%= (p.content || '').slice(0,220) %>...</p>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/foot') %>

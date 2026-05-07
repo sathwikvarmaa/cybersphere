@@ -1,0 +1,37 @@
+<%- include('partials/head_fixed', { pageTitle: 'Profile', showSearch: false }) %>
+
+<div class="two-col">
+  <section class="panel glass">
+    <h2 class="panel-title">Your profile</h2>
+
+    <div class="profile-card">
+      <div class="avatar">U</div>
+      <div>
+        <div class="profile-username"><%= username %></div>
+        <div class="profile-meta muted"><%= isAdmin ? 'Admin' : 'Member' %></div>
+      </div>
+    </div>
+
+    <form class="form" method="post" action="/profile/update">
+      <label class="label">Bio</label>
+      <textarea class="input" name="bio" rows="4"><%= bio %></textarea>
+
+      <div class="row">
+        <button class="btn primary" type="submit">Update profile</button>
+        <a class="btn" href="/logout">Logout</a>
+      </div>
+    </form>
+  </section>
+
+  <aside class="panel glass">
+    <h3 class="panel-title">Quick actions</h3>
+    <div class="quick-actions">
+      <a class="btn" href="/bookmarks">Open bookmarks</a>
+      <a class="btn" href="/notifications">Notifications</a>
+      <a class="btn" href="/my/posts">My posts</a>
+    </div>
+  </aside>
+</div>
+
+<%- include('partials/foot') %>
+

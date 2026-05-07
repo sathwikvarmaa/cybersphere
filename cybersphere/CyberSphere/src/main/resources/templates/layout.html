@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title th:text="${pageTitle} != null ? ${pageTitle} : 'CyberSphere'">CyberSphere</title>
+  <link rel="stylesheet" href="/static/css/app.css"/>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">◈</span>
+    CyberSphere
+  </div>
+  <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="nav" id="main-nav">
+    <a class="nav-link" href="/">Home</a>
+    <a class="nav-link" href="/search">Search</a>
+    <a class="nav-link" href="/categories">Categories</a>
+    <a class="nav-link" href="/bookmarks">Bookmarks</a>
+    <a class="nav-link" href="/profile">Profile</a>
+    <a class="nav-link" href="/admin">Admin</a>
+  </nav>
+</header>
+
+<main class="container">
+  <div th:replace="~{::content}"></div>
+</main>
+
+<footer class="footer">
+  <div class="muted">CyberSphere • local training instance</div>
+</footer>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>
+

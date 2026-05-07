@@ -1,0 +1,28 @@
+<%- include('partials/head_fixed', { pageTitle: 'Register', showSearch: false }) %>
+
+<div class="centered">
+  <section class="panel glass auth-panel">
+    <h2 class="panel-title">Create account</h2>
+
+    <form class="form" method="post" action="/register">
+      <label class="label">Username</label>
+      <input class="input" name="username" autocomplete="username" />
+
+      <label class="label">Password</label>
+      <input class="input" name="password" type="password" autocomplete="new-password" />
+
+      <label class="label">Bio</label>
+      <textarea class="input" name="bio" rows="3"></textarea>
+
+      <button class="btn primary" type="submit">Register</button>
+    </form>
+
+    <div class="muted" style="margin-top:10px; font-size:13px;">
+      Use local test users. (No real security claims.)
+    </div>
+  </section>
+</div>
+
+<%- include('partials/foot') %>
+</html>
+

@@ -1,0 +1,35 @@
+<%- include('partials/head_fixed', { pageTitle: 'Bookmarks', showSearch: false }) %>
+
+<div class="container">
+  <section class="panel glass">
+    <h2 class="panel-title">Your Bookmarks</h2>
+    
+    <% if (bookmarks && bookmarks.length > 0) { %>
+      <div class="post-grid">
+        <% bookmarks.forEach(bookmark => { %>
+          <div class="post-card glass">
+            <% if (bookmark.image_path) { %>
+              <a href="/post/<%= bookmark.id %>" class="post-link">
+                <img src="/<%= bookmark.image_path %>" alt="<%= bookmark.title %>" class="post-image">
+              </a>
+            <% } %>
+            <div class="post-body">
+              <a href="/post/<%= bookmark.id %>" class="post-link">
+                <h3 class="post-title"><%= bookmark.title %></h3>
+              </a>
+              <div class="post-meta muted">By <%= bookmark.author_username %></div>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    <% } else { %>
+      <div class="empty-state">
+        <p>You haven't bookmarked any posts yet.</p>
+        <p>Browse the blog and bookmark your favorite posts to save them here.</p>
+        <a class="btn primary" href="/">Back to Home</a>
+      </div>
+    <% } %>
+  </section>
+</div>
+
+<%- include('partials/foot') %>

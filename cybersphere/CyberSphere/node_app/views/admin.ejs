@@ -1,0 +1,31 @@
+<%- include('partials/head_fixed', { pageTitle: 'Admin', showSearch: false }) %>
+
+<section class="panel glass">
+  <h2 class="panel-title">Admin dashboard</h2>
+  <div class="muted">Simple analytics and reports (demo)</div>
+
+  <div style="display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:14px; margin-top:14px;">
+    <div class="panel glass" style="padding:14px;">
+      <div class="panel-title">Analytics</div>
+      <div class="muted">Total posts: <strong><%= (typeof analytics !== 'undefined' && analytics.posts) ? analytics.posts : '—' %></strong></div>
+      <div class="muted">Registered users: <strong><%= (typeof analytics !== 'undefined' && analytics.users) ? analytics.users : '—' %></strong></div>
+      <div class="muted">Comments: <strong><%= (typeof analytics !== 'undefined' && analytics.comments) ? analytics.comments : '—' %></strong></div>
+      <div class="muted">Likes: <strong><%= (typeof analytics !== 'undefined' && analytics.likes) ? analytics.likes : '—' %></strong></div>
+    </div>
+    <div class="panel glass" style="padding:14px;">
+      <div class="panel-title">Top posts</div>
+      <% if (typeof topPosts !== 'undefined' && topPosts && topPosts.length > 0) { %>
+        <ul>
+          <% topPosts.forEach(function(p){ %>
+            <li><a class="link" href="/post/<%= p.id %>"><%= p.title %></a> — <span class="muted"><%= p.reactions %> reactions</span></li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <div class="muted">No reports yet.</div>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+<%- include('partials/foot') %>
+

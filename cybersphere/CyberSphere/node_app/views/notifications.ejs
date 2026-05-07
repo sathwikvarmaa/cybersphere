@@ -1,0 +1,33 @@
+<%- include('partials/head_fixed', { pageTitle: 'Notifications', showSearch: false }) %>
+
+<div class="container">
+  <section class="panel glass">
+    <h2 class="panel-title">Your Notifications</h2>
+    
+    <% if (notifications && notifications.length > 0) { %>
+      <div class="notifications-list">
+        <% notifications.forEach(notif => { %>
+          <div class="notification-item glass">
+            <div class="notification-content">
+              <p class="notification-text">
+                <strong><%= notif.commenterUsername %></strong> commented on 
+                <a href="/post/<%= notif.postId %>" class="post-link"><%= notif.postTitle %></a>
+              </p>
+              <p class="notification-comment"><%= notif.body %></p>
+              <div class="notification-meta muted"><%= notif.createdAt %></div>
+            </div>
+            <a href="/post/<%= notif.postId %>" class="btn small">View Post</a>
+          </div>
+        <% }); %>
+      </div>
+    <% } else { %>
+      <div class="empty-state">
+        <p>You don't have any notifications yet.</p>
+        <p>Stay tuned for updates on your posts and interactions.</p>
+        <a class="btn primary" href="/">Back to Home</a>
+      </div>
+    <% } %>
+  </section>
+</div>
+
+<%- include('partials/foot') %>
