@@ -1,68 +1,76 @@
-# CyberSphere — Vulnerable Web Application for VAPT Practice
+# 🛡️ CyberSphere — Vulnerable Web Application for VAPT Practice
 
-## Overview
+## 🚀 Overview
 
-CyberSphere is an intentionally vulnerable full-stack web application designed for:
+CyberSphere is an intentionally vulnerable full-stack web application built for:
 
-* VAPT practice
-* Burp Suite Professional active scanning
-* Web security testing
-* OWASP Top 10 learning
-* Secure coding demonstrations
-* Penetration testing labs
+* 🔍 VAPT Practice
+* 🕷️ Burp Suite Professional Active Scanning
+* 🌐 Web Security Testing
+* 📚 OWASP Top 10 Learning
+* 🧪 Penetration Testing Labs
+* 🔐 Secure Coding Demonstrations
 
-The project simulates a real-world blogging and social platform with intentionally insecure implementations for educational and authorized security training purposes.
+The platform simulates a real-world blogging and social media application with intentionally insecure implementations for cybersecurity education and authorized ethical hacking practice.
 
 ---
 
-# Features
+# 🌍 Live Demo
 
-## Authentication System
+🔗 https://cybersphere-6wcy.onrender.com/
 
-* User login
+> ⚠️ The free Render instance may take a few seconds to wake up after inactivity.
+
+---
+
+# ✨ Features
+
+## 🔑 Authentication System
+
+* User Login
 * Registration
-* Session handling
-* Profile management
-* Admin dashboard
+* Session Handling
+* Profile Management
+* Admin Dashboard
 
-## Blog Platform
+## 📰 Blog Platform
 
-* View posts
+* View Posts
 * Categories
-* Search functionality
-* Comments system
-* Reactions and bookmarks
+* Search Functionality
+* Comments System
+* Reactions & Bookmarks
 
-## Security Training Focus
+## 🎯 Security Training Focus
 
-The application contains intentionally vulnerable patterns suitable for:
+This application contains intentionally vulnerable patterns suitable for:
 
-* XSS testing
-* SQL injection testing
-* Session testing
-* Authentication testing
-* Authorization testing
-* IDOR testing
-* CSRF testing
-* Input validation testing
-
----
-
-# Tech Stack
-
-| Technology     | Purpose           |
-| -------------- | ----------------- |
-| Node.js        | Backend runtime   |
-| Express.js     | Web framework     |
-| SQLite         | Database          |
-| EJS            | Templating engine |
-| CSS/JavaScript | Frontend          |
-| Render         | Deployment        |
-| GitHub         | Source control    |
+* 🛑 XSS Testing
+* 💉 SQL Injection Testing
+* 🍪 Session Testing
+* 🔐 Authentication Testing
+* 🚪 Authorization Testing
+* 🆔 IDOR Testing
+* 📨 CSRF Testing
+* ⚡ Input Validation Testing
 
 ---
 
-# Project Structure
+# 🛠️ Tech Stack
+
+| Technology       | Purpose           |
+| ---------------- | ----------------- |
+| Node.js          | Backend Runtime   |
+| Express.js       | Web Framework     |
+| SQLite           | Database          |
+| EJS              | Templating Engine |
+| CSS / JavaScript | Frontend          |
+| Render           | Deployment        |
+| GitHub           | Source Control    |
+
+---
+
+# 📂 Project Structure
 
 ```txt
 CyberSphere/
@@ -82,27 +90,27 @@ CyberSphere/
 
 ---
 
-# Installation
+# ⚙️ Installation
 
-## Clone Repository
+## 📥 Clone Repository
 
 ```bash
 git clone https://github.com/sathwikvarmaa/cybersphere.git
 ```
 
-## Navigate to Node App
+## 📁 Navigate to Node App
 
 ```bash
 cd cybersphere/CyberSphere/node_app
 ```
 
-## Install Dependencies
+## 📦 Install Dependencies
 
 ```bash
 npm install
 ```
 
-## Run Application
+## ▶️ Run Application
 
 ```bash
 node server.js
@@ -110,7 +118,7 @@ node server.js
 
 ---
 
-# Local Access
+# 🌐 Local Access
 
 ```txt
 http://localhost:3000
@@ -118,7 +126,7 @@ http://localhost:3000
 
 ---
 
-# Default Test Accounts
+# 👤 Default Test Accounts
 
 | Role  | Username | Password    |
 | ----- | -------- | ----------- |
@@ -129,7 +137,7 @@ http://localhost:3000
 
 ---
 
-# Available Routes
+# 🧭 Available Routes
 
 | Page       | URL         |
 | ---------- | ----------- |
@@ -144,23 +152,21 @@ http://localhost:3000
 
 ---
 
-# Deployment
+# ☁️ Deployment (Render)
 
-## Deploy on Render
-
-### Root Directory
+## Root Directory
 
 ```txt
 cybersphere/CyberSphere/node_app
 ```
 
-### Build Command
+## Build Command
 
 ```txt
 npm install
 ```
 
-### Start Command
+## Start Command
 
 ```txt
 node server.js
@@ -168,16 +174,16 @@ node server.js
 
 ---
 
-# Burp Suite Professional Testing
+# 🕷️ Burp Suite Professional Testing
 
-The application is designed for security testing using:
+The application is designed for testing using:
 
 * Burp Suite Professional
 * OWASP ZAP
 * Browser DevTools
-* Manual VAPT workflows
+* Manual VAPT Workflows
 
-## Burp Proxy Configuration
+## 🔌 Proxy Configuration
 
 ```txt
 127.0.0.1:8080
@@ -185,31 +191,31 @@ The application is designed for security testing using:
 
 ---
 
-# Educational Purpose
+# 🎓 Educational Purpose
 
 This project is intended strictly for:
 
-* Cybersecurity education
-* Ethical hacking practice
-* Authorized penetration testing
-* Web application security learning
-* OWASP training
+* Cybersecurity Education
+* Ethical Hacking Practice
+* Authorized Penetration Testing
+* Web Application Security Learning
+* OWASP Training
 
-Do not use this project for unauthorized attacks.
-
----
-
-# Author
-
-Sathwik Varma
-
-* Cybersecurity Enthusiast
-* VAPT Learner
-* Network Security Student
-* GATE Aspirant
+> 🚫 Do not use this project for unauthorized attacks.
 
 ---
 
-# License
+# 👨‍💻 Author
 
-This project is for educational and research purposes only.
+## Sathwik Varma
+
+* 🛡️ Cybersecurity Enthusiast
+* 🔍 VAPT Learner
+* 🌐 Network Security Student
+* 🎯 GATE Aspirant
+
+---
+
+# 📜 License
+
+This project is intended for educational and research purposes only.
